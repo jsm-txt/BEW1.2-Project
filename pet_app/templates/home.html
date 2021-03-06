@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Post your pet Images</h1>
+
+<h2>All Pets</h2>
+
+{% for pet in all_pets %}
+<div>
+    <a href="/pet/{{ pet.id }}">{{ pet.name }}</a> 
+</div>
+{% endfor %}
+
+{% endblock %}
