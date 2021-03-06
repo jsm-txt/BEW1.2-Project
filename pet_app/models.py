@@ -12,7 +12,7 @@ class User(UserMixin, db.Model):
         return f'<User: {self.username}>'
 
 class Pet(db.Model):
-    __tablename__='pet'
+    __tablename__='Pet'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80), nullable=False)
     photo_url = db.Column(URLType)
@@ -23,12 +23,12 @@ class Pet(db.Model):
         return f'Pet: {self.name}'
 
 class Image(db.Model):
-    __tablename__='images'
+    __tablename__='Image'
     id = db.Column(db.Integer, primary_key=True)
     caption = db.Column(db.String(80), nullable=False)
     photo_url = db.Column(URLType)
     pet_id = db.Column(
-        db.Integer, db.ForeignKey('pet.id'), nullable=False)
+        db.Integer, db.ForeignKey('Pet.id'), nullable=False)
     images_of = db.relationship('Pet', back_populates='pet_images')
     def __repr__(self):
         return f'Caption: {self.caption}'

@@ -7,9 +7,20 @@
             <h1>Pet Images</h1>
         </div>
         <div class="card-body">
-            <form method='POST'>
             
-            </form>  
+<form method="POST" action="{{ url_for('main.new_image', pet_id=pet_id ) }}">
+    {{ form.csrf_token }}
+    <fieldset>
+        <legend>Please enter your information:</legend>
+        {{ form.caption.label }}
+        {{ form.caption }}
+        
+        {{ form.photo_url.label }}
+        {{ form.photo_url }}
+            
+        {{ form.submit }}
+    </fieldset>
+</form>
         </div>
     </div>
 </main>

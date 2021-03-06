@@ -13,10 +13,10 @@
                 <div class="card ">
                     <div class="card-body">
                         <h3 class="card-title mt-5">{{pet.name}}</h3>
-                        <p class="card-text p-2">{{pet.about}}</p>
-                        <a href="/images/{{pet._id}}" class="btn btn-primary">Add images to profile</a>
-                        <a href="/remove/{{pet._id}}" class="btn btn-primary">Remove images from profile</a>
-                        <a href="/" class="btn btn-primary">Back to Pets</a>
+                        
+                        <a href="/new_image/{{pet.id}}" class="btn btn-primary">Add images to this pet</a>
+                        <a href="/remove/{{pet.id}}" class="btn btn-primary">Remove images from pet</a>
+                        <a href="/" class="btn btn-primary">Back to home</a>
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
             {% for picture in pet_pictures %}
                 <div class="col p-3">
                   <div class="card h-100">
-                    <img src="{{picture.pet_pictures}}" class="card-img-top" alt="...">
+                    <img src="{{image.photo_url}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <p class="card-text">{{picture.caption}}</p>
                     </div>
